@@ -2,6 +2,9 @@
 	email = jamie@hexdigital.com
 	name = Jamie Warburton
 [alias]
+    # Amend commits
+        amend = commit --amend
+
     # List commits
     # List commits in short form, with colors and branch/tag annotations.
         ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
