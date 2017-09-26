@@ -1,0 +1,71 @@
+[user]
+	email = jamie@hexdigital.com
+	name = Jamie Warburton
+[alias]
+    # List commits
+    # List commits in short form, with colors and branch/tag annotations.
+        ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+    # List commits showing changed files
+        ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+    # List with no colours (in case need to chain output with Unix pipes)
+        lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
+    # List oneline commits showing dates
+        lds = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short
+    # List oneline commits showing relative dates
+        ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
+    # List default look for short git log
+        le = log --oneline --decorate
+
+    # History of a file
+        filelog = log -u
+        fl = log -u
+
+    # Inspect recent history
+    # Show modified files in last commit
+        dl = "!git ll -1"
+    # Show a diff last commit
+        dlc = diff --cached HEAD^
+    # Show content (full diff) of a commit given a revision
+        dr  = "!f() { git diff "$1"^.."$1"; }; f"
+        lc  = "!f() { git ll "$1"^.."$1"; }; f"
+        diffr  = "!f() { git diff "$1"^.."$1"; }; f"
+
+    # Finding files and content inside files
+    # Find a file path in codebase
+        find = "!git ls-files | grep -i"
+
+    # List all aliases
+        la = "!git config -l | grep alias | cut -c 7-"
+
+    # Assume aliases
+    # Assume a file as unchanged
+        assume = update-index --assume-unchanged
+    # Unassume a file
+        unassume = update-index --no-assume-unchanged
+    # Show assumed files
+        assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+    # Unassume all the assumed files
+        unassumeall = "!git assumed | xargs git update-index --no-assume-unchanged"
+    # Assume all
+        assumeall = "!git st -s | awk {'print $2'} | xargs git assume"
+
+    # Show the last tag
+        lasttag = describe --tags --abbrev=0
+        lt = describe --tags --abbrev=0
+
+    # Merge aliases
+        ours = "!f() { git co --ours $@ && git add $@; }; f"
+        theirs = "!f() { git co --theirs $@ && git add $@; }; f"
+
+    # Reset Commands
+        r = reset
+        r1 = reset HEAD^
+        r2 = reset HEAD^^
+        rh = reset --hard
+        rh1 = reset HEAD^ --hard
+        rh2 = reset HEAD^^ --hard
+
+    # Stash Commands
+        sl = stash list
+        sa = stash apply
+        ss = stash save
