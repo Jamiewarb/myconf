@@ -118,7 +118,7 @@ alias gmnff="git merge --no-ff"
 alias gpr="git pull-request"
 
 # Enable the ~/.myconf file to track files in my $HOME directory for VC
-alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+alias myconf='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 
 #//------- Hex ----------\\#
 alias cdwp='cd wp-content/themes/$(basename "$PWD")'
