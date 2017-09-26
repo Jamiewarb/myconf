@@ -2,7 +2,7 @@
 
 This repo contains all of my configuration files. Credit to [StreakyCoba](https://news.ycombinator.com/item?id=11071754)
 
-## To set one up from scratch:
+## Set up from scratch:
 
     git init --bare $HOME/.myconf
     alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
@@ -20,10 +20,13 @@ where my ~/.myconf directory is a git bare repository. Then any file within the 
     config push
 
 
-## To replicate this home directory on a new machine using the following command:
+## Replicate on new machine
+To replicate this home directory on a new machine using the following command:
+
     git clone --separate-git-dir=$HOME/.myconf git@github.com:jamiewarb/myconf $HOME
 
-## If your $HOME is not empty, you should do the following instead, to a temporary directory
+## Replicate with non-empty $HOME
+If your $HOME is not empty, you should do the following instead, to a temporary directory
 
     git clone --separate-git-dir=$HOME/.myconf /path/to/repo $HOME/myconf-tmp
     cp ~/myconf-tmp/.gitmodules ~  # If you use Git submodules
