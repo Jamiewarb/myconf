@@ -1,0 +1,10 @@
+--ignore-dir=log
+--ignore-dir=tmp
+--ignore-dir=vendor
+--ignore-dir=.idea
+--ignore-dir=bower_components
+--ignore-dir=node_modules
+--type-set=sass:ext:scss,sass
+--type-set=scss:ext:scss,sass
+--type-set=markdown:ext:md,markdown
+--sort-files
