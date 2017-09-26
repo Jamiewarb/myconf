@@ -5,6 +5,9 @@
     # Amend commits
         amend = commit --amend
 
+    # Generate a diff without diff-so-fancy and no colours
+        patch = !git --no-pager diff --no-color
+
     # List commits
     # List commits in short form, with colors and branch/tag annotations.
         ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
