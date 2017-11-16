@@ -7,6 +7,10 @@ alias wget="wget -c"
 alias histg="history | grep"
 alias localip="ip addr show en0 | grep -inet\ | awk '{ print $3 }' | awk -F/ '{print $1}'"
 
+#//----- Configuration File Paths ---------\\#
+alias apacheconf="apachectl -V | grep -i server_config_file | cut -d '\"' -f 2"
+alias phpini="php -ini | grep -i \"Loaded Configuration File\" | cut -d '>' -f 2"
+
 #//----- Git & Hub ------\\#
 alias git="hub"
 alias gst="git status --short --branch"
