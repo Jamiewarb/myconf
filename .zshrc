@@ -1,13 +1,15 @@
 # If you come from bash you might have to change your $PATH.
-export PATH="/bin"
+export PATH="/sbin"
+export PATH="/usr/sbin:$PATH"
+export PATH="/bin:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
-export PATH="/usr/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/opt:$PATH"
 export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
-export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/Jamie/.oh-my-zsh
@@ -92,64 +94,27 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-ssh-add -K ~/.ssh/id_rsa
+if [ -f ~/.zsh_aliases ]; then
+    . ~/.zsh_aliases
+fi
 
-#--------------------------#
-# ALIASSES - APPLICATIONS  #
-#--------------------------#
-#//------- Shell --------\\#
-alias mkdir="mkdir -pv"
-alias wget="wget -c"
-alias histg="history | grep"
-alias localip="ip addr show en0 | grep -inet\ | awk '{ print $3 }' | awk -F/ '{print $1}'"
+if [ -f ~/.zsh_hex_aliases ]; then
+    . ~/.zsh_hex_aliases
+fi
 
 #//----- Git & Hub ------\\#
-alias git="hub"
-alias gst="git status --short --branch"
-alias gpu="git push"
-alias gpl="git pull"
-alias gch="git checkout"
-alias gco="git commit"
-alias gad="git add"
-alias grm="git rm"
-alias gmv="git mv"
-alias gbr="git branch"
-alias gmnff="git merge --no-ff"
-alias gpr="git pull-request"
-
 # Enable the ~/.myconf file to track files in my $HOME directory for VC
 alias myconf='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
-
-#//------- Hex ----------\\#
-alias cdwp='cd wp-content/themes/$(basename "$PWD")'
-alias cdbill='cd ~/Sites/bills/wp-content/themes/billstheme'
-
-alias chout='sudo sh ~/Sites/tools/checkout.sh'
-alias install-wp='sudo sh ~/Sites/tools/wordpress.sh'
-
-alias gchs='git checkout staging'
-alias gchp='git checkout production'
-alias gchm='git checkout master'
-alias gchd='git checkout development'
-
-alias cdq=gotorepo
-
-alias cdbot=gotobotrepo
-
-alias subl=sublime
-alias pbssh="pbcopy < ~/.ssh/id_rsa.pub"
-alias tt-fetch="ssh root@komodo.hexdigital.com 'php /var/www/vhosts/tasktracker.komodo.hexdigital.com/artisan fetch'"
-alias portal-fetch="ssh root@komodo.hexdigital.com 'php /var/www/vhosts/portal.komodo.hexdigital.com/current/artisan fetch'"
-alias mcb-cache="ssh mcbhprod@python.hexdigital.com 'php /home/mcbhprod/current/scripts/clear-cache.php'"
-alias bills-cache="ssh deploy@dragon.hexdigital.com 'php /var/www/bills-website.co.uk/wp-content/themes/billstheme/clear-menu-cache.php'"
-
-alias snip="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User"
 
 #--------------------------#
 #  SHELL - LOOK AND FEEL   #
 #--------------------------#
 #  # Git branch for prompt
 parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+parse_git_branch_cli() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
@@ -168,7 +133,7 @@ function battery_charge {
 setopt prompt_subst
 
 # Set prompt, colours and ls colours
-PROMPT='%{[35m%}$(get_date)$reset_color:%{[36m%}%n$reset_color@%{[32m%}%m$reset_color:%{[33;1m%}$(get_pwd)%{[32m%}$(parse_git_branch)
+PROMPT='%{[35m%}$(get_date)$reset_color:%{[36m%}%n$reset_color@%{[32m%}%m$reset_color:%{[33;1m%}$(get_pwd)%{[32m%}$(parse_git_branch_cli)
 %{[m%}$ '
 RPROMPT='$(battery_charge)'
 
@@ -177,11 +142,6 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[green]%}?"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-
-# Style ls output, colour, file type, file size changes
-alias ls='ls -GFh'
-alias ll='ls -lah'
 
 #--------------------------#
 #    SHELL - FUNCTIONS     #
@@ -242,7 +202,7 @@ function extract {
 
 # git functions
 function newb() {
-  sh ~/bin/new-branch.sh $1 $2
+  sh ~/bin/new-branch.sh $1 $(parse_git_branch)
 }
 
 echo 'ZSH Shell loaded successfully - ~/.zshrc'

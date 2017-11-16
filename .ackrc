@@ -1,3 +1,8 @@
+--ignore-dir=build
+--ignore-dir=public
+--ignore-file=is:style.css
+--ignore-file=is:yarn.lock
+--ignore-dir=storage
 --ignore-dir=log
 --ignore-dir=tmp
 --ignore-dir=vendor
