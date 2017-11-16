@@ -1,0 +1,49 @@
+#--------------------------#
+# ALIASSES - APPLICATIONS  #
+#--------------------------#
+#//------- Shell --------\\#
+alias mkdir="mkdir -pv"
+alias wget="wget -c"
+alias histg="history | grep"
+alias localip="ip addr show en0 | grep -inet\ | awk '{ print $3 }' | awk -F/ '{print $1}'"
+
+#//----- Git & Hub ------\\#
+alias git="hub"
+alias gst="git status --short --branch"
+alias gpu="git push"
+alias gpl="git pull"
+alias gch="git checkout"
+alias gco="git commit"
+alias gad="git add"
+alias grm="git rm"
+alias gmv="git mv"
+alias gbr="git branch"
+alias gmnff="git merge --no-ff"
+alias gpr="git pull-request"
+
+#//------- Hex ----------\\#
+alias cdwp='cd wp-content/themes/$(basename "$PWD")'
+alias cdbill='cd ~/Sites/bills/wp-content/themes/billstheme'
+
+alias chout='sudo sh ~/Sites/tools/checkout.sh'
+alias install-wp='sudo sh ~/Sites/tools/wordpress.sh'
+
+alias gchs='git checkout staging'
+alias gchp='git checkout production'
+alias gchm='git checkout master'
+alias gchd='git checkout development'
+
+alias cdq=gotorepo
+
+alias cdbot=gotobotrepo
+
+# Style ls output, colour, file type, file size changes
+alias ls='ls -GFh'
+alias ll='ls -lah'
+
+alias subl=sublime
+alias pbssh="pbcopy < ~/.ssh/id_rsa.pub"
+
+alias snip="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User"
+
+echo 'ZSH Aliases loaded successfully - ~/.zsh_aliases'
