@@ -45,6 +45,10 @@ alias cdbot=gotobotrepo
 alias ls='ls -GFh'
 alias ll='ls -lah'
 
+function chrome() {
+    open -a "/Applications/Google Chrome.app" $1
+}
+
 alias subl=sublime
 alias pbssh="pbcopy < ~/.ssh/id_rsa.pub"
 
