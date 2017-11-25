@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # If user id not equal to root user id
 if [[ $(id -u) -eq 0 ]]; then
     echo "The command \"sphp\" should not be executed as root or via sudo directly."
