@@ -7,8 +7,10 @@
 --ignore-dir=tmp
 --ignore-dir=vendor
 --ignore-dir=.idea
+--ignore-dir=_/stylesheets
 --ignore-dir=bower_components
 --ignore-dir=node_modules
+--type-set=vue:ext:vue
 --type-set=sass:ext:scss,sass
 --type-set=scss:ext:scss,sass
 --type-set=markdown:ext:md,markdown

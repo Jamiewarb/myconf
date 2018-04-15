@@ -5,6 +5,20 @@
     # Amend commits
         amend = commit --amend
 
+    # Show the most recent 10 branches that were worked on
+        recent = for-each-ref --count=10 --sort=-committerdate refs/heads/ --format="%(refname:short)"
+
+    # Show a list of today’s work - use --since to change the time
+        today = log --since=00:00:00 --all --no-merges --oneline --author=jamie@hexdigital.com
+
+    # Remind yourself what you’ve been up to
+        recap = log --all --oneline --no-merges --author=jamie@hexdigital.com
+
+    # Check which changes you’re about to pull - add HEAD..origin/master to the end
+        upstream = log --oneline --no-merges
+    # Review what you’re about to push -  add origin/master..HEAD to the end
+        local = log --oneline --no-merges
+
     # Generate a diff without diff-so-fancy and no colours
         patch = !git --no-pager diff --no-color
 
@@ -91,3 +105,5 @@
 	old = red bold
 	new = green bold
 	whitespace = red reverse
+[rerere]
+	enabled = true
