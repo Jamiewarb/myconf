@@ -1,4 +1,8 @@
+--ignore-dir=dist
+--ignore-dir=backstop_data
+--ignore-dir=coverage
 --ignore-dir=build
+--ignore-dir=dist
 --ignore-dir=public
 --ignore-file=is:style.css
 --ignore-file=is:yarn.lock

@@ -11,6 +11,9 @@ alias localip="ip addr show en0 | grep -inet\ | awk '{ print $3 }' | awk -F/ '{p
 alias apacheconf="apachectl -V | grep -i server_config_file | cut -d '\"' -f 2"
 alias phpini="php -ini | grep -i \"Loaded Configuration File\" | cut -d '>' -f 2"
 
+#//----- Node + Vue ----\\#
+alias jestdebug="node --inspect-brk node_modules/.bin/jest --runInBand"
+
 #//----- Git & Hub ------\\#
 alias git="hub"
 alias gst="git status --short --branch"
@@ -32,10 +35,12 @@ alias cdbill='cd ~/Sites/bills/wp-content/themes/billstheme'
 alias chout='sudo sh ~/Sites/tools/checkout.sh'
 alias install-wp='sudo sh ~/Sites/tools/wordpress.sh'
 
+alias gchi='git checkout integration'
 alias gchs='git checkout staging'
 alias gchp='git checkout production'
 alias gchm='git checkout master'
 alias gchd='git checkout development'
+alias gchr='git checkout release-$1'
 
 alias cdq=gotorepo
 
@@ -50,6 +55,7 @@ function chrome() {
 }
 
 alias subl=sublime
+alias s="sublime ."
 alias pbssh="pbcopy < ~/.ssh/id_rsa.pub"
 
 alias snip="cd ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User"

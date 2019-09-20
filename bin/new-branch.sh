@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ $1 = feature* ]] || [[ $1 = change* ]] || [[ $1 = bugfix* ]] || [[ $1 = hotfix* ]] || [[ $1 = release* ]] || [[ $1 = conflict* ]]; then
+if [[ $1 = feature* ]] || [[ $1 = change* ]] || [[ $1 = bugfix* ]] || [[ $1 = hotfix* ]] || [[ $1 = release* ]] || [[ $1 = conflict* ]] || [[ $1 = subtask* ]]; then
     b_target="[32m$1[m"
 else
     b_target="[33m$1[m"

@@ -107,3 +107,7 @@
 	whitespace = red reverse
 [rerere]
 	enabled = true
+[push]
+	followTags = true
+[pull]
+	rebase = true

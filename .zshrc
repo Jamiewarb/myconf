@@ -2,17 +2,22 @@
 export PATH="/sbin"
 export PATH="/usr/sbin:$PATH"
 export PATH="/bin:$PATH"
-export PATH="/sbin:$PATH"
 export PATH="/usr/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt:$PATH"
 export PATH="$HOME/bin:$PATH"
+export PATH="$HOME/bin/*:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
+export PATH="$HOME/.yarn/bin:$PATH"
 #export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
@@ -207,6 +212,19 @@ function newb() {
 
 echo 'ZSH Shell loaded successfully - ~/.zshrc'
 
-export PATH="$HOME/.yarn/bin:$PATH"
-
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# added by travis gem
+[ -f /Users/Jamie/.travis/travis.sh ] && source /Users/Jamie/.travis/travis.sh
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/Jamie/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/Jamie/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/Jamie/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/Jamie/google-cloud-sdk/completion.zsh.inc'; fi
+
+smartresize() {
+   mogrify -path $3 -filter Triangle -define filter:support=2 -thumbnail $2 -unsharp 0.25x0.08+8.3+0.045 -dither None -posterize 136 -quality 82 -define jpeg:fancy-upsampling=off -define png:compression-filter=5 -define png:compression-level=9 -define png:compression-strategy=1 -define png:exclude-chunk=all -interlace none -colorspace sRGB $1
+}
+
+
