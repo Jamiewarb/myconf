@@ -2,6 +2,12 @@
 
 This repo contains all of my configuration files. Credit to [StreakyCoba](https://news.ycombinator.com/item?id=11071754)
 
+It does not contain any credentials, keys or sensitive data.
+
+Remember to copy this over manually before wiping a machine!!
+
+> Don't forget to copy all sensitive data over to a new machine!!
+
 ## Set up from scratch:
 
     git init --bare $HOME/.myconf
