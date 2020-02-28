@@ -10,6 +10,7 @@ export PATH="$HOME/bin:$PATH"
 export PATH="$HOME/bin/*:$PATH"
 export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="$HOME/.nvm:$PATH"
 #export PATH="$(brew --prefix homebrew/php/php56)/bin:$PATH"
 
 # Path to your oh-my-zsh installation.

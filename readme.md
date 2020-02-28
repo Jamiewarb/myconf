@@ -34,10 +34,11 @@ To replicate this home directory on a new machine using the following command:
 ## Replicate with non-empty $HOME
 If your $HOME is not empty, you should do the following instead, to a temporary directory
 
-    git clone --separate-git-dir=$HOME/.myconf /path/to/repo $HOME/myconf-tmp
+    git clone --separate-git-dir=$HOME/.myconf git@github.com:jamiewarb/myconf $HOME/myconf-tmp
     cp ~/myconf-tmp/.gitmodules ~  # If you use Git submodules
     rm -r ~/myconf-tmp/
     alias myconf='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
+    myconf config status.showUntrackedFiles no
 
 ## Explanation
 The first line creates a folder ~/.myconf which is a Git bare repository that will track our files.

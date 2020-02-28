@@ -1,3 +1,4 @@
+--ignore-dir=.nuxt
 --ignore-dir=dist
 --ignore-dir=backstop_data
 --ignore-dir=coverage
