@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/Jamie/Sites/hosb/.git'
-let g:netrw_dirhist_2='/Users/Jamie/bin'
-let g:netrw_dirhist_3='/Users/Jamie/Sites/etaru/wp-content/themes/Pantheon/.git'
-let g:netrw_dirhist_4='/usr/local/etc/httpd'
-let g:netrw_dirhist_5='/Users/Jamie/Sites/whirli-micro/whirli-wacc/.git'
-let g:netrw_dirhist_6='/usr/local/etc/php/7.2'
-let g:netrw_dirhist_7='/Users/jamie/Hex/guidelines/.git'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/jamie/Sites/birdlife/.git'
+let g:netrw_dirhist_2='/Users/jamie/Sites/psielementor/app/public/wp-content/mu-plugins/core-functionality/inc/cpts'

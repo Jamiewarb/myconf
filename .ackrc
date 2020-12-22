@@ -1,3 +1,4 @@
+--ignore-dir=.next
 --ignore-dir=.nuxt
 --ignore-dir=dist
 --ignore-dir=backstop_data
@@ -19,4 +20,5 @@
 --type-set=sass:ext:scss,sass
 --type-set=scss:ext:scss,sass
 --type-set=markdown:ext:md,markdown
+--type-set=spec:match:[.]spec[.]js$
 --sort-files
