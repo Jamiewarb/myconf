@@ -55,4 +55,5 @@ Some configuration either can't or isn't stored in this repo. These are instruct
 - oh-my-zsh: Install `oh-my-zsh`, then replace `~/.zsh` with the one from this repo
 - brew: https://brew.sh/
 - ack: brew install ack
+- gh: brew install gh
 
