@@ -44,3 +44,10 @@ If your $HOME is not empty, you should do the following instead, to a temporary 
 The first line creates a folder ~/.myconf which is a Git bare repository that will track our files.
 Then we create an alias myconf which we will use instead of the regular git when we want to interact with our configuration repository.
 We set a flag - local to the repository - to hide files we are not explicitly tracking yet. This is so that when you type myconf status and other commands later, files you are not interested in tracking will not show up as untracked.
+
+## What's missing?
+
+Some configuration either can't or isn't stored in this repo. These are instructions for them.
+
+- iterm2: Profiles > Keys > Key Binds > Presets > Natural Text Editing (cmd/opt left/right moving around words/lines)
+- diff-so-fancy: [Download from here](https://github.com/so-fancy/diff-so-fancy) and put in ~/bin/
