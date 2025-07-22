@@ -1,3 +1,4 @@
+--ignore-dir=.turbo
 --ignore-dir=.next
 --ignore-dir=.nuxt
 --ignore-dir=dist
@@ -6,8 +7,11 @@
 --ignore-dir=build
 --ignore-dir=dist
 --ignore-dir=public
+
+--ignore-file=is:tsconfig.tsbuildinfo
 --ignore-file=is:style.css
 --ignore-file=is:yarn.lock
+
 --ignore-dir=storage
 --ignore-dir=log
 --ignore-dir=tmp

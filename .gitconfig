@@ -91,7 +91,7 @@
         ss = stash save
 
     # Cleanup Commands
-        forget="! /usr/local/bin/hub fetch -p && /usr/local/bin/hub branch -vv | awk '/: gone]/{print $1}' | xargs /usr/local/bin/hub branch -D"
+        forget="! git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D"
 [core]
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [color]

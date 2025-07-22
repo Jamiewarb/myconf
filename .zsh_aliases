@@ -15,7 +15,7 @@ alias phpini="php -ini | grep -i \"Loaded Configuration File\" | cut -d '>' -f 2
 alias jestdebug="node --inspect-brk node_modules/.bin/jest --runInBand"
 
 #//----- Git & Hub ------\\#
-alias git="hub"
+#alias git="hub"
 alias gst="git status --short --branch"
 alias gpu="git push"
 alias gpl="git pull"
