@@ -52,3 +52,4 @@ Some configuration either can't or isn't stored in this repo. These are instruct
 - iterm2: Profiles > Keys > Key Binds > Presets > Natural Text Editing (cmd/opt left/right moving around words/lines)
 - diff-so-fancy: [Download from here](https://github.com/so-fancy/diff-so-fancy) and put in ~/bin/
 - ssh: Copy `~/.ssh` directory to new machine
+- oh-my-zsh: Install `oh-my-zsh`, then replace `~/.zsh` with the one from this repo
